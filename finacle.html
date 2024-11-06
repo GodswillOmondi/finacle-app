@@ -1,0 +1,151 @@
+    <!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                justify-content: center;
+                align-items: center;
+            }
+            .login-box{
+                background-color: rgb(245, 245, 245);
+                width: 800px;
+                height: 400px;
+                position: relative;
+                top: 100px;
+                margin: 0 auto;
+                border: 1px solid black;
+                background-image: url('finaclebg.png');
+                background-repeat: no-repeat;
+                background-position: center;
+
+
+            }
+            .login-box input[type ="text"],
+            .login-box input[type ="password"]{
+            width: 150px;
+            box-shadow: 1px 2px 0 gray;
+            border: 3px 0 0 2px solid #6a6a6a;
+            box-sizing: border-box;}
+            .input{
+                margin-top: 130px;
+                margin-left: 250px;
+                
+            }
+            .login-box button{
+                box-shadow: 1px 2px 0 gray;
+            }
+            .error{
+                color: red;
+                box-sizing: border-box;
+             
+            }
+            .motto{
+                font-size: 10px;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                letter-spacing: 2px;
+            }
+            .login-box footer{
+                font-size: 15px;
+                text-align: center;
+                padding-top: 48px;
+                color:#6a6a6a;
+            }
+            .header{
+                margin-left: -50px;
+            }
+            .popup-overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.226);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            }
+            .popup-window{
+                height: 600px;
+                width: 500px;
+                border-radius: 6px; 
+                margin: 0;
+                padding: 0;
+                background: white;
+                
+            }
+            .popup-window .ver-button{
+                background: red;
+                color: white;
+                font: arial;
+                font-size: 20px;
+                position: relative;
+                top: 450px;
+                width: 450px;
+                height: 50px;
+                border-radius: 6px;
+                left: 25px;
+            
+            }
+            .popup-window #userid{
+                width: 100%;
+                position: relative;
+                height: 50px;
+                border: 2px solid gray;
+                margin: 0;
+                box-sizing: border-box;
+                top: 50px;
+                color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-box">
+        
+        <div class="input">
+            <div class="header">
+                <h1><img src="finlogo.png" width="30px" height="30px">Finacle<br><span class="motto">
+            Transforming Banking
+        </span></h1>
+            <h2>Universal Banking Solution from Infosys</h2>
+            </div>
+        <B>U s e r I D :</B>         <input type="text" id="username">
+        <br><br><b>Password :</b> <input type="password" id="password">
+        <button onclick="showpopup()">Login</button>
+         
+    </div> 
+    <footer>Copyright[] 2007-2008 Infosys Limited. All rights reserved  <a href="https://www.finacle.com">www.finacle.com</a></footer>
+    </div>
+    <div class="popup-overlay" id="popup">
+        <div class="popup-window">
+            <b>Verify User data:</b>
+            <div id="userid"></div>
+            <div id="error" class="error"></div>
+        <button class="ver-button" onclick="validatelogin()">verify</button>
+        </div>
+    </div>
+    <script src="finacle.js"> 
+        function validatelogin(){
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var error = document.getElementById('error');
+            if(username === "########" && password ==="####****")
+        {
+            window.location.href = "dashboard.html";
+        } else{
+            error.innerText = "invalid username or password!";
+            
+        }
+
+     
+        }
+        function showpopup(){
+            document.getElementById('popup').style.display = 'flex';
+            var ID = document.getElementById('userid');
+            
+        }
+    </script>
+    </body>
+</html>

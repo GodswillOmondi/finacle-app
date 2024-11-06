@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .menu{
+                width: 100%;
+                height: 20px;
+                background: linear-gradient(180deg, rgb(103, 103, 103), dodgerblue, rgb(112, 112, 112));
+                margin: 0 auto;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .error{
+                color: red;
+            }            
+        </style>
+
+    </head>
+    <body>
+        <p class="menu"> <button onclick="loadmenu()" style="float: right; height: inherit;">OK</button>
+            <input type="text" id="menu" placeholder="MENU" style="height: 15px;
+                                                float: right;">
+        <div id="error" class="error"></div>
+        
+            
+        </p>
+        <script>
+            function loadmenu(){
+            var menu = document.getElementById('menu').value;
+            var error = document.getElementById('error');
+
+            if(menu === "WELCOME"){
+                window.location.href = "greetings.html";
+            }
+            if(menu === "LOGIN"){
+                window.location.href = "finacle.html";
+            }
+            if(menu === "EXIT"){
+                window.location.href = "logout.html";
+            }
+            else{
+                error.innerText = "User Unauthorised to access the Menu option!";
+            }
+        }
+        </script>
+    </body>
+</html>
