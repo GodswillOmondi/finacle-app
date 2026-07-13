@@ -21,6 +21,6 @@ public class TransactionRequest {
     private String currency;
 
     private String description;
-    
+
 
 }
